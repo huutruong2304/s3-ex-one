@@ -1,0 +1,16 @@
+.body-widgets {
+  max-width: 1240px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+.widget-col {
+  width: 600px;
+  flex-direction: column;
+}
+@media (max-width: 1279px) {
+  .widget-col {
+    margin: 0 30px;
+  }
+}

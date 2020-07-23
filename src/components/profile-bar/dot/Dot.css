@@ -1,0 +1,50 @@
+.profile-bar .dots3 {
+  background-image: url("/html/assets/img_ui/icon_more.svg");
+}
+
+.profile-act {
+  width: 150px;
+  height: 0;
+  background: #000;
+  border: 1px solid #5d5d5d;
+  z-index: 3;
+  position: absolute;
+  top: 26px;
+  left: -1px;
+  visibility: hidden;
+
+  will-change: height, visibility, opacity;
+  transition: height 0.2s, visibility 0s, opacity 0.1s linear;
+}
+.profile-act.show {
+  opacity: 1;
+  visibility: visible;
+  height: 180px;
+}
+.profile-act .action {
+  height: 27px;
+  padding: 5px 6px;
+  text-transform: capitalize;
+  line-height: 17px;
+  background-color: transparent;
+
+  will-change: background-color;
+  transition: background-color 0.3s;
+}
+.profile-act .divider {
+  background: #5d5d5d;
+  height: 1px;
+  width: calc(100% - 12px);
+  margin: 4px 6px;
+}
+.profile-act .action:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.profile-act .action.disabled {
+  opacity: 0.3;
+}
+.profile-act .action.disabled:hover {
+  background-color: transparent;
+  cursor: default;
+}

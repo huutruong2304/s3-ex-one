@@ -1,0 +1,16 @@
+.name-bar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  min-width: 1024px;
+  background-color: #2b2b2b;
+  max-height: 1.875rem;
+  height: 1.875rem;
+  font-family: RazerF5;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: #707070;
+}

@@ -1,266 +1,297 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Razer Nari Ultimate | Mic</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<!-- font css -->
-		<link href="./assets/fonts/roboto.css" rel="stylesheet">
-		<link href="./assets/fonts/razerf5.css" rel="stylesheet">
-		<!-- global css -->
-		<link href="./assets/css/main.css" rel="stylesheet">
-		<link href="./assets/css/nav.css" rel="stylesheet">
-		<link href="./assets/css/dropdown.css" rel="stylesheet">
-		<link href="./assets/css/switch.css" rel="stylesheet">
-		<link href="./assets/css/slider.css" rel="stylesheet">
-		<link href="./assets/css/checkbox.css" rel="stylesheet">
-		<link href="./assets/css/tooltip.css" rel="stylesheet">
-		<!-- local css -->
-		<link href="./assets/css/profile-bar.css" rel="stylesheet">
-		<link href="./assets/css/body-widgets.css" rel="stylesheet">
-		<style type="text/css">
-			.h2-title .switch {
-				position: relative;
-			    top: 3px;
-			    left: 10px;
-			}
-			#micEnhance .slider-container {
-				width: 490px;
-				margin-left: 30px;
-				height: 0;
-				opacity: 0;
-				overflow: hidden;
 
-				will-change: height, opacity;
-				transition: height 0.3s, opacity 0.3s;
-			}
-			#micEnhance .slider-container.on {
-				height: 64px;
-				opacity: 1;
-				overflow: unset;
-				margin-bottom: 20px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="main-container">
+<head>
+	<title>Razer Nari Ultimate | Mic</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- font css -->
+	<link href="./assets/fonts/roboto.css" rel="stylesheet">
+	<link href="./assets/fonts/razerf5.css" rel="stylesheet">
+	<!-- global css -->
+	<link href="./assets/css/main.css" rel="stylesheet">
+	<link href="./assets/css/nav.css" rel="stylesheet">
+	<link href="./assets/css/dropdown.css" rel="stylesheet">
+	<link href="./assets/css/switch.css" rel="stylesheet">
+	<link href="./assets/css/slider.css" rel="stylesheet">
+	<link href="./assets/css/checkbox.css" rel="stylesheet">
+	<link href="./assets/css/tooltip.css" rel="stylesheet">
+	<!-- local css -->
+	<link href="./assets/css/profile-bar.css" rel="stylesheet">
+	<link href="./assets/css/body-widgets.css" rel="stylesheet">
+	<style type="text/css">
+		.h2-title .switch {
+			position: relative;
+			top: 3px;
+			left: 10px;
+		}
 
-			<div class="nav-tabs flex">
-				<div class="nav arrow back"></div>
-				<div class="nav arrow forward disabled"></div>
+		#micEnhance .slider-container {
+			width: 490px;
+			margin-left: 30px;
+			height: 0;
+			opacity: 0;
+			overflow: hidden;
 
-				<a class="nav" href="./sound.html">sound</a>
-				<a class="nav" href="./mixer.html">mixer</a>
-				<a class="nav" href="./enhancement.html">enhancement</a>
-				<a class="nav" href="./eq.html">eq</a>
-				<a class="nav active" href="./mic.html">mic</a>
-				<a class="nav" href="./lighting.html">lighting</a>
-				<a class="nav" href="./power.html">power</a>
+			will-change: height, opacity;
+			transition: height 0.3s, opacity 0.3s;
+		}
 
-				<div class="user">
-					<div class="avatar"></div>
-				</div>
-			</div>
-			
-			<div class="body-wrapper scrollable">
+		#micEnhance .slider-container.on {
+			height: 64px;
+			opacity: 1;
+			overflow: unset;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
 
-				<div class="profile-bar flex">
-					<div class="loader" tooltip="Syncing Profiles"></div>
-					<div>profile</div>
+<body>
+	<div class="main-container">
 
-					<input type="text" name="profile" id="profileEdit" maxlength="25">
+		<div class="nav-tabs flex">
+			<div class="nav arrow back"></div>
+			<div class="nav arrow forward disabled"></div>
 
-					<div class="dropdown-area">
-						<div id="profileDrop" class="s3-dropdown">
-							<div class="selected">profile 5</div>
-							<div class="icon expand"></div>
-						</div>
-						<div id="profileDropOpt" class="s3-options flex">
-							<div class="option">default profile</div>
-							<div class="option">profile 2</div>
-							<div class="option">profile 3</div>
-							<div class="option">profile 4</div>
-							<div class="option selected">profile 5</div>
-							<div class="option">profile 6</div>
-							<div class="option">profile 7</div>
-							<div class="option">profile 8</div>
-						</div>
-					</div>
-					
-					<div class="dots3 hover-border" id="profileMenuToggle">
-						<div class="profile-act" id="profileMenu">
-							<div class="act action">add</div>
-							<div class="act action">import</div>
-							<div class="act divider"></div>
-							<div class="act action">rename</div>
-							<div class="act action">duplicate</div>
-							<div class="act action">export</div>
-							<div class="act divider"></div>
-							<div class="act action" id="deleteAction">delete</div>
-						</div>
-					</div>
+			<a class="nav" href="./sound.html">sound</a>
+			<a class="nav" href="./mixer.html">mixer</a>
+			<a class="nav" href="./enhancement.html">enhancement</a>
+			<a class="nav" href="./eq.html">eq</a>
+			<a class="nav active" href="./mic.html">mic</a>
+			<a class="nav" href="./lighting.html">lighting</a>
+			<a class="nav" href="./power.html">power</a>
 
-					<div id="deleteAlert" class="flex alert profile-del">
-						<div class="title">delete profile</div>
-						<div class="body-text t-center">
-							You're about to delete this profile. All bindings in this profile will be deleted.
-						</div>
-						<div class="thx-btn" id="deleteConfirm">delete</div>
-					</div>
-					<div class="obm hover-border" tooltip="On-board Profiles"></div>
-					<div class="divider"></div>
-					<div class="batt batt-30" tooltip="30% Battery"></div>
-				</div>
-
-				<div class="body-widgets flex">
-
-					<div class="widget-col col-left flex">
-						<div class="widget" id="micPhone">
-							<div class="help"></div>
-							<div class="tip">
-								I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip.
-							</div>
-
-							<div class="title">microphone<!-- 	
-								 --><div class="switch on switch-slider" id="swPhone"><div class="handle"></div></div></div>
-
-							<div class="h2-title">mic volume</div>
-							<div class="slider-container" id="slPhone">
-								<input type="range" min="10" max="100" value="55" step="1" class="slider" id="slPhoneRange">
-							</div>
-
-							<div class="h2-title mt20">mic sensitivity<!-- 
-								 --><div class="switch on switch-slider" id="swSensi"><div class="handle"></div></div></div>
-							<div class="h2-body">Adjust this setting to remove unwanted background noise or increase the amount of mic output heard</div>
-							<div class="slider-container" id="slSensi">
-								<input type="range" min="10" max="100" value="55" step="1" class="slider" id="slSensiRange">
-							</div>
-
-						</div>
-					</div>
-
-					<div class="widget-col col-right flex">
-						<div class="widget" id="micSidetone">
-							<div class="help"></div>
-							<div class="tip">
-								I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip.
-							</div>
-							<div class="title">sidetone<!-- 
-								 --><div class="switch switch-slider" id="swSide"><div class="handle"></div></div></div>
-							<div class="slider-container" id="slSide">
-								<input type="range" min="0" max="100" value="50" step="1" class="slider" id="slSideRange">
-							</div>
-						</div>
-						<div class="widget" id="micEnhance">
-							<div class="help"></div>
-							<div class="tip">
-								I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip.
-							</div>
-							<div class="title">enhancements</div>
-
-							<div class="check-item">
-								<input type="checkbox" id="checkNorm" /><label for="checkNorm" class="check-box"><div class="check-text">Volume Normalization</div></label>
-							</div>
-								<div class="slider-container" id="slNorm">
-									<input type="range" min="10" max="100" value="50" step="1" class="slider" id="slNormRange">
-								</div>
-
-							<div class="check-item">
-								<input type="checkbox" id="checkAmb" /><label for="checkAmb" class="check-box"><div class="check-text">Ambient Noise Reduction</div></label>
-							</div>
-								<div class="slider-container" id="slAmb">
-									<input type="range" min="10" max="100" value="50" step="1" class="slider" id="slAmbRange">
-								</div>
-
-							<div class="check-item">
-								<input type="checkbox" id="checkClarity" /><label for="checkClarity" class="check-box"><div class="check-text">Voice Clarity</div></label>
-							</div>
-								<div class="slider-container" id="slClarity">
-									<input type="range" min="10" max="100" value="50" step="1" class="slider" id="slClarityRange">
-								</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="name-bar">
-				razer nari ultimate
+			<div class="user">
+				<div class="avatar"></div>
 			</div>
 		</div>
-	</body>
-	<!-- external js -->
-	<!-- global js -->
-	<script type="text/javascript" src="./assets/js/main.js"></script>
-	<script type="text/javascript" src="./assets/js/dropdown.js"></script>
-	<script type="text/javascript" src="./assets/js/switch.js"></script>
-	<script type="text/javascript" src="./assets/js/slider.js"></script>
-	<!-- local js -->
-	<script type="text/javascript">
-		var mouseIsDown = false;
 
-		const pf = new Dropdown('profileDrop');
+		<div class="body-wrapper scrollable">
 
-		const switchSet = [
-			{id: 'swPhone', target: 'slPhone', toggle: 'on'},
-			{id: 'swSensi', target: 'slSensi', toggle: 'on'},
-			{id: 'swSide', target: 'slSide', toggle: 'on'},
-		];
+			<div class="profile-bar flex">
+				<div class="loader" tooltip="Syncing Profiles"></div>
+				<div>profile</div>
 
-		var sw = [];
+				<input type="text" name="profile" id="profileEdit" maxlength="25">
 
-		for(var i=0;i<switchSet.length;i++) {
-			sw[i] = new Switch(switchSet[i].id, switchSet[i].target, switchSet[i].toggle);
-		}
+				<div class="dropdown-area">
+					<div id="profileDrop" class="s3-dropdown">
+						<div class="selected">profile 5</div>
+						<div class="icon expand"></div>
+					</div>
+					<div id="profileDropOpt" class="s3-options flex">
+						<div class="option">default profile</div>
+						<div class="option">profile 2</div>
+						<div class="option">profile 3</div>
+						<div class="option">profile 4</div>
+						<div class="option selected">profile 5</div>
+						<div class="option">profile 6</div>
+						<div class="option">profile 7</div>
+						<div class="option">profile 8</div>
+					</div>
+				</div>
 
-		const slider1 = new Slider('slPhone');
-		const slider2 = new Slider('slSensi');
+				<div class="dots3 hover-border" id="profileMenuToggle">
+					<div class="profile-act" id="profileMenu">
+						<div class="act action">add</div>
+						<div class="act action">import</div>
+						<div class="act divider"></div>
+						<div class="act action">rename</div>
+						<div class="act action">duplicate</div>
+						<div class="act action">export</div>
+						<div class="act divider"></div>
+						<div class="act action" id="deleteAction">delete</div>
+					</div>
+				</div>
 
-		const slider3 = new Slider('slSide', '0', '100');
+				<div id="deleteAlert" class="flex alert profile-del">
+					<div class="title">delete profile</div>
+					<div class="body-text t-center">
+						You're about to delete this profile. All bindings in this profile will be deleted.
+					</div>
+					<div class="thx-btn" id="deleteConfirm">delete</div>
+				</div>
+				<div class="obm hover-border" tooltip="On-board Profiles"></div>
+				<div class="divider"></div>
+				<div class="batt batt-30" tooltip="30% Battery"></div>
+			</div>
 
-		const slider4 = new Slider('slNorm');
-		const slider5 = new Slider('slAmb');
-		const slider6 = new Slider('slClarity');
-		
-	</script>
-	<script type="text/javascript">
-		for(var i=0;i<switchSet.length;i++) {
-			let obj = sw[i];
-			obj.switchDom.addEventListener('click', function() {
-				obj.handleClick();
-			});
-		}
+			<div class="body-widgets flex">
 
-		window.onresize = function(e) {
-			//
-		};
-		window.onmousedown = function(e) {
-			mouseIsDown = true;
-			pf.handleDropdown(e);
-		};
-		window.onmousemove = function(e) {
+				<div class="widget-col col-left flex">
+					<div class="widget" id="micPhone">
+						<div class="help"></div>
+						<div class="tip">
+							I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a
+							tooltip.
+						</div>
 
-			slider1.handleMouseMove();
-			slider2.handleMouseMove();
-			slider3.handleMouseMove();
-			slider4.handleMouseMove();
-			slider5.handleMouseMove();
-			slider6.handleMouseMove();
-		}
-		window.onmouseup = function(e) {
-			mouseIsDown = false;
-		}
-	</script>
-	<script type="text/javascript">
-		document.getElementById('checkNorm').addEventListener('click', function(e) {
-			slider4.containerDom.classList.toggle('on');
-			slider4.sliderDom.disabled = false;
+						<div class="title">microphone
+							<!-- 	
+								 -->
+							<div class="switch on switch-slider" id="swPhone">
+								<div class="handle"></div>
+							</div>
+						</div>
+
+						<div class="h2-title">mic volume</div>
+						<div class="slider-container" id="slPhone">
+							<input type="range" min="10" max="100" value="55" step="1" class="slider" id="slPhoneRange">
+						</div>
+
+						<div class="h2-title mt20">mic sensitivity
+							<!-- 
+								 -->
+							<div class="switch on switch-slider" id="swSensi">
+								<div class="handle"></div>
+							</div>
+						</div>
+						<div class="h2-body">Adjust this setting to remove unwanted background noise or increase the
+							amount of mic output heard</div>
+						<div class="slider-container" id="slSensi">
+							<input type="range" min="10" max="100" value="55" step="1" class="slider" id="slSensiRange">
+						</div>
+
+					</div>
+				</div>
+
+				<div class="widget-col col-right flex">
+					<div class="widget" id="micSidetone">
+						<div class="help"></div>
+						<div class="tip">
+							I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a
+							tooltip.
+						</div>
+						<div class="title">sidetone
+							<!-- 
+								 -->
+							<div class="switch switch-slider" id="swSide">
+								<div class="handle"></div>
+							</div>
+						</div>
+						<div class="slider-container" id="slSide">
+							<input type="range" min="0" max="100" value="50" step="1" class="slider" id="slSideRange">
+						</div>
+					</div>
+					<div class="widget" id="micEnhance">
+						<div class="help"></div>
+						<div class="tip">
+							I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a tooltip. I'm just a
+							tooltip.
+						</div>
+						<div class="title">enhancements</div>
+
+						<div class="check-item">
+							<input type="checkbox" id="checkNorm" /><label for="checkNorm" class="check-box">
+								<div class="check-text">Volume Normalization</div>
+							</label>
+						</div>
+						<div class="slider-container" id="slNorm">
+							<input type="range" min="10" max="100" value="50" step="1" class="slider" id="slNormRange">
+						</div>
+
+						<div class="check-item">
+							<input type="checkbox" id="checkAmb" /><label for="checkAmb" class="check-box">
+								<div class="check-text">Ambient Noise Reduction</div>
+							</label>
+						</div>
+						<div class="slider-container" id="slAmb">
+							<input type="range" min="10" max="100" value="50" step="1" class="slider" id="slAmbRange">
+						</div>
+
+						<div class="check-item">
+							<input type="checkbox" id="checkClarity" /><label for="checkClarity" class="check-box">
+								<div class="check-text">Voice Clarity</div>
+							</label>
+						</div>
+						<div class="slider-container" id="slClarity">
+							<input type="range" min="10" max="100" value="50" step="1" class="slider"
+								id="slClarityRange">
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="name-bar">
+			razer nari ultimate
+		</div>
+	</div>
+</body>
+<!-- external js -->
+<!-- global js -->
+<script type="text/javascript" src="./assets/js/main.js"></script>
+<script type="text/javascript" src="./assets/js/dropdown.js"></script>
+<script type="text/javascript" src="./assets/js/switch.js"></script>
+<script type="text/javascript" src="./assets/js/slider.js"></script>
+<!-- local js -->
+<script type="text/javascript">
+	var mouseIsDown = false;
+
+	const pf = new Dropdown('profileDrop');
+
+	const switchSet = [
+		{ id: 'swPhone', target: 'slPhone', toggle: 'on' },
+		{ id: 'swSensi', target: 'slSensi', toggle: 'on' },
+		{ id: 'swSide', target: 'slSide', toggle: 'on' },
+	];
+
+	var sw = [];
+
+	for (var i = 0; i < switchSet.length; i++) {
+		sw[i] = new Switch(switchSet[i].id, switchSet[i].target, switchSet[i].toggle);
+	}
+
+	const slider1 = new Slider('slPhone');
+	const slider2 = new Slider('slSensi');
+
+	const slider3 = new Slider('slSide', '0', '100');
+
+	const slider4 = new Slider('slNorm');
+	const slider5 = new Slider('slAmb');
+	const slider6 = new Slider('slClarity');
+
+</script>
+<script type="text/javascript">
+	for (var i = 0; i < switchSet.length; i++) {
+		let obj = sw[i];
+		obj.switchDom.addEventListener('click', function () {
+			obj.handleClick();
 		});
-		document.getElementById('checkAmb').addEventListener('click', function(e) {
-			slider5.containerDom.classList.toggle('on');
-			slider5.sliderDom.disabled = false;
-		});
-		document.getElementById('checkClarity').addEventListener('click', function(e) {
-			slider6.containerDom.classList.toggle('on');
-			slider6.sliderDom.disabled = false;
-		});
-	</script>
+	}
+
+	window.onresize = function (e) {
+		//
+	};
+	window.onmousedown = function (e) {
+		mouseIsDown = true;
+		pf.handleDropdown(e);
+	};
+	window.onmousemove = function (e) {
+
+		slider1.handleMouseMove();
+		slider2.handleMouseMove();
+		slider3.handleMouseMove();
+		slider4.handleMouseMove();
+		slider5.handleMouseMove();
+		slider6.handleMouseMove();
+	}
+	window.onmouseup = function (e) {
+		mouseIsDown = false;
+	}
+</script>
+<script type="text/javascript">
+	document.getElementById('checkNorm').addEventListener('click', function (e) {
+		slider4.containerDom.classList.toggle('on');
+		slider4.sliderDom.disabled = false;
+	});
+	document.getElementById('checkAmb').addEventListener('click', function (e) {
+		slider5.containerDom.classList.toggle('on');
+		slider5.sliderDom.disabled = false;
+	});
+	document.getElementById('checkClarity').addEventListener('click', function (e) {
+		slider6.containerDom.classList.toggle('on');
+		slider6.sliderDom.disabled = false;
+	});
+</script>
+
 </html>
